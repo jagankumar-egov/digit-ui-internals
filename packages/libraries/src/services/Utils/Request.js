@@ -37,6 +37,7 @@ export const Request = async ({ method = "POST", url, data = {}, useCache = fals
     params._ = Date.now();
   }
   const res = await Axios({ method, url, data, params });
+  console.log(res, "resp");
   if (useCache) {
     window.Digit.RequestCache[key] = res.data;
   }

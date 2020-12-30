@@ -2395,6 +2395,21 @@ img, video {
             .inbox-container .search-container .search-complaint-container .complaint-input-container .complaint-input .clear-search {
               display: block; }
           .inbox-container .search-container .search-complaint-container .complaint-input-container .mobile-input {
+            margin-left: 8px; }
+        .inbox-container .search-container .search-complaint-container .tl-input-container {
+          display: -webkit-box !important;
+          display: -ms-flexbox !important;
+          display: flex !important;
+          -ms-flex-flow: wrap;
+          flex-flow: wrap; }
+          .inbox-container .search-container .search-complaint-container .tl-input-container .tl-input {
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column; }
+            .inbox-container .search-container .search-complaint-container .tl-input-container .tl-input .clear-search {
+              display: block; }
+          .inbox-container .search-container .search-complaint-container .tl-input-container .mobile-input {
             margin-left: 8px; } }
 
 .home-link {

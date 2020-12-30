@@ -156,6 +156,23 @@
             @apply ml-sm;
           }
         }
+
+        .tl-input-container {
+          display: flex !important;
+          flex-flow: wrap;
+
+          .tl-input {
+            @apply flex flex-col;
+
+            .clear-search {
+              @apply block;
+            }
+          }
+
+          .mobile-input {
+            @apply ml-sm;
+          }
+        }
       }
     }
   }

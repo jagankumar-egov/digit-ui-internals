@@ -8,6 +8,8 @@ import { LocationService } from "./services/Location";
 import { LocalityService } from "./services/Localities";
 import { LocalizationService } from "./services/Localization/service";
 import { PGRService } from "./services/PGR";
+import { TLService } from "./services/TL";
+
 import * as dateUtils from "./services/Utils/Date";
 import { WorkflowService } from "./services/WorkFlow";
 import { MdmsService } from "./services/MDMS";
@@ -52,6 +54,7 @@ const initLibraries = () => {
   setupLibraries("LocalityService", LocalityService);
   setupLibraries("LocalizationService", LocalizationService);
   setupLibraries("PGRService", PGRService);
+  setupLibraries("TLService", TLService);
   setupLibraries("DateUtils", dateUtils);
   setupLibraries("workflowService", WorkflowService);
   setupLibraries("MDMSService", MdmsService);

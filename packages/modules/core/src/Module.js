@@ -6,9 +6,11 @@ import { getI18n, useTranslation } from "react-i18next";
 import { useWindowSize } from "rooks";
 import { PGRModule, PGRLinks, PGRReducers } from "@egovernments/digit-ui-module-pgr/src/Module";
 import { FSMModule, FSMLinks } from "@egovernments/digit-ui-module-fsm/src/Module";
+// import { TLModule,TLLinks } from "@egovernments/digit-ui-module-tl/src/Module";
 import { Body, TopBar, Loader, PrivateRoute } from "@egovernments/digit-ui-react-components";
 
 import getStore from "./redux/store";
+import { TLModule, TLLinks } from "../../tl/src/Module";
 
 const getTenants = (codes, tenants) => {
   return tenants.filter((tenant) => codes.map((item) => item.code).includes(tenant.code));
@@ -16,7 +18,7 @@ const getTenants = (codes, tenants) => {
 
 const AppModules = ({ stateCode, userType, modules, appTenants }) => {
   const { path } = useRouteMatch();
-  const moduleList = ["PGR", "FSM"];
+  const moduleList = ["PGR", "FSM", "TL"];
 
   const appRoutes = modules
     .filter((module) => moduleList.includes(module.code))
@@ -38,6 +40,9 @@ const AppModules = ({ stateCode, userType, modules, appTenants }) => {
       <Route path={`${path}/fsm`}>
         <FSMModule stateCode={stateCode} cityCode="pb.amritsar" moduleCode="FSM" userType={userType} />
       </Route>
+      <Route path={`${path}/tl`}>
+        <TLModule stateCode={stateCode} cityCode="pb.amritsar" moduleCode="TL" userType={userType} />
+      </Route>
       <Route>
         <AppHome userType={userType} />
       </Route>
@@ -51,6 +56,7 @@ const AppHome = ({ userType }) => {
       <React.Fragment>
         <PGRLinks matchPath={`/digit-ui/${userType}/pgr`} userType={userType} />
         <FSMLinks matchPath={`/digit-ui/${userType}/fsm`} userType={userType} />
+        <TLLinks matchPath={`/digit-ui/${userType}/tl`} userType={userType} />
       </React.Fragment>
     );
   }
